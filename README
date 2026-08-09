@@ -1,0 +1,369 @@
+# 🛍️ FashionStore — Java Full Stack E-Commerce Web Application
+
+> A complete, fully-functional fashion e-commerce platform built from scratch
+> using Java Servlets, JSP, MySQL and Apache Tomcat 10.1.
+> Follows MVC Design Pattern with DAO + DAOImpl architecture.
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](screenshots/home.png)
+
+### 🛍️ Products Page
+![Products Page](screenshots/products.png)
+
+### 📦 Product Detail
+![Product Detail](screenshots/product_detail.png)
+
+### 🛒 Cart Page
+![Cart](screenshots/cart.png)
+
+### ✅ Order Success
+![Order Success](screenshots/order_success.png)
+
+### 📍 Order Tracking
+![Order Tracking](screenshots/order_tracking.png)
+
+### ❤️ Wishlist
+![Wishlist](screenshots/wishlist.png)
+
+### ⚙️ Admin Dashboard
+![Admin Dashboard](screenshots/admin_dashboard.png)
+
+### 🔐 Login Page
+![Login](screenshots/login.png)
+
+### 📝 Register Page
+![Register](screenshots/register.png)
+
+---
+
+## ✨ Features
+
+### 👤 User Features
+- ✅ User Registration with BCrypt Password Hashing
+- ✅ Secure Login and Logout with Session Management
+- ✅ User Profile Management
+- ✅ Browse Products by Category
+  - Women | Men | Kids | Ethnic Wear | Accessories
+- ✅ Search Products by Name and Description
+- ✅ Filter Products by Category and Price Range
+- ✅ Sort Products by Price and Name
+- ✅ Product Detail Page with Size Selection and Stock Info
+- ✅ Add to Cart, Update Quantity, Remove from Cart
+- ✅ Checkout with Delivery Address
+- ✅ Multiple Payment Options
+  - Cash on Delivery | UPI | Credit/Debit Card | Net Banking
+- ✅ Order Placement and Confirmation
+- ✅ Order History
+- ✅ Order Tracking with Visual Progress Bar
+- ✅ Wishlist — Add, Remove, View
+
+### ⚙️ Admin Features
+- ✅ Admin Dashboard
+  - Total Products | Total Orders | Total Users | Total Revenue
+- ✅ Product Management
+  - Add New Product | Edit Product | Delete Product (Soft Delete)
+- ✅ Order Management
+  - View All Orders | Update Order Status
+- ✅ User Management
+  - View All Registered Users
+
+### 🎨 UI Features
+- ✅ Ocean Blue Professional Theme
+- ✅ Fully Responsive Design
+- ✅ JavaScript Form Validations
+- ✅ Password Strength Meter
+- ✅ Real-time Field Error Messages
+- ✅ Order Tracking Progress Bar with Pulse Animation
+- ✅ Product Image Gallery with Real Images
+- ✅ Custom Error Pages (404 and 500)
+
+---
+
+## 🔧 Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Language** | Java 21 |
+| **Backend** | Jakarta Servlets (Jakarta EE 5.0) |
+| **Frontend** | JSP, JSTL, HTML5, CSS3, JavaScript |
+| **Database** | MySQL 8.0 |
+| **Server** | Apache Tomcat 10.1 |
+| **Build Tool** | Apache Maven |
+| **Security** | BCrypt Password Hashing (jBCrypt) |
+| **IDE** | Eclipse IDE |
+| **Design Pattern** | MVC (Model-View-Controller) |
+| **DB Pattern** | DAO + DAOImpl |
+
+---
+
+## 🗄️ Database Schema
+
+| Table | Description |
+|-------|-------------|
+| `users` | User accounts and profiles |
+| `categories` | Product categories |
+| `products` | Product catalog with details |
+| `product_variants` | Product sizes and stock |
+| `cart` | User shopping cart |
+| `cart_items` | Items inside cart |
+| `orders` | Placed orders with delivery info |
+| `order_items` | Individual items in each order |
+| `wishlist` | User saved products |
+
+---
+
+## 📁 Project Structure
+
+FashionStore/
+│
+├── src/main/java/
+│ ├── com.fashionstore.controller/
+│ │ ├── HomeController.java
+│ │ ├── UserController.java
+│ │ ├── ProductController.java
+│ │ ├── CartController.java
+│ │ ├── OrderController.java
+│ │ ├── WishlistController.java
+│ │ └── AdminController.java
+│ │
+│ ├── com.fashionstore.dao/
+│ │ ├── UserDAO.java
+│ │ ├── ProductDAO.java
+│ │ ├── CategoryDAO.java
+│ │ ├── CartDAO.java
+│ │ ├── OrderDAO.java
+│ │ ├── WishlistDAO.java
+│ │ └── AdminDAO.java
+│ │
+│ ├── com.fashionstore.daoimpl/
+│ │ ├── UserDAOImpl.java
+│ │ ├── ProductDAOImpl.java
+│ │ ├── CategoryDAOImpl.java
+│ │ ├── CartDAOImpl.java
+│ │ ├── OrderDAOImpl.java
+│ │ ├── WishlistDAOImpl.java
+│ │ └── AdminDAOImpl.java
+│ │
+│ ├── com.fashionstore.model/
+│ │ ├── User.java
+│ │ ├── Product.java
+│ │ ├── Category.java
+│ │ ├── ProductVariant.java
+│ │ ├── Cart.java
+│ │ ├── CartItem.java
+│ │ ├── Order.java
+│ │ ├── OrderItem.java
+│ │ └── Wishlist.java
+│ │
+│ ├── com.fashionstore.filter/
+│ │ └── EncodingFilter.java
+│ │
+│ └── com.fashionstore.util/
+│ ├── DBConnection.java
+│ └── PasswordUtil.java
+│
+├── src/main/webapp/
+│ ├── assets/
+│ │ ├── css/
+│ │ │ ├── style.css
+│ │ │ ├── home.css
+│ │ │ ├── product.css
+│ │ │ ├── user.css
+│ │ │ ├── order.css
+│ │ │ └── admin.css
+│ │ ├── js/
+│ │ └── images/
+│ │
+│ ├── WEB-INF/
+│ │ ├── views/
+│ │ │ ├── admin/
+│ │ │ ├── user/
+│ │ │ ├── product/
+│ │ │ ├── cart/
+│ │ │ ├── order/
+│ │ │ ├── wishlist/
+│ │ │ └── error/
+│ │ ├── partials/
+│ │ │ ├── navbar.jsp
+│ │ │ └── footer.jsp
+│ │ └── web.xml
+│ └── index.jsp
+│
+├── screenshots/
+├── .gitignore
+├── README.md
+└── pom.xml
+
+
+---
+
+## 🚀 How to Run Locally
+
+### Prerequisites
+- Java 21 installed
+- Apache Tomcat 10.1 installed
+- MySQL 8.0 installed
+- Eclipse IDE with Maven support
+- Git installed
+
+### Steps
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/Madhavi-Gurram/FashionStore-Java-Fullstack.git
+```
+
+**2. Import into Eclipse**
+
+File → Import → Maven → Existing Maven Projects
+Browse to cloned folder → Finish
+
+
+**3. Create Database**
+
+Open MySQL Workbench and run:
+```sql
+CREATE DATABASE fashion_store;
+USE fashion_store;
+```
+Then run the complete schema SQL provided in the project.
+
+**4. Configure DB Connection**
+
+Open `src/main/java/com/fashionstore/util/DBConnection.java`:
+```java
+private static final String URL =
+    "jdbc:mysql://localhost:3306/fashion_store";
+private static final String USER = "root";
+private static final String PASSWORD = "your_mysql_password";
+```
+
+**5. Maven Update**
+
+Right click project → Maven → Update Project (Alt+F5) → OK
+
+
+**6. Run on Tomcat**
+
+Right click project → Run As → Run on Server
+Select Apache Tomcat 10.1 → Finish
+
+
+**7. Open in Browser**
+
+http://localhost:8080/FashionStore/home
+
+
+**8. Setup Admin Account**
+```sql
+UPDATE users
+SET is_admin = TRUE
+WHERE email = 'your_registered_email@gmail.com';
+```
+
+Then visit Admin Panel:
+
+http://localhost:8080/FashionStore/admin
+
+
+---
+
+## 🌊 Application Flow
+
+User Visits Home
+↓
+Browse Products by Category / Search / Filter
+↓
+View Product Detail → Select Size → Add to Cart
+↓
+View Cart → Proceed to Checkout
+↓
+Enter Delivery Details → Select Payment
+↓
+Place Order → Order Confirmation
+↓
+Track Order → View Progress Bar
+↓
+View Order History → My Orders Page
+
+
+---
+
+## 🔐 Security Features
+
+✅ BCrypt Password Hashing
+→ Passwords never stored as plain text
+
+✅ Session Management
+→ User sessions handled securely
+
+✅ Admin Role Check
+→ Admin pages protected from regular users
+
+✅ JSP inside WEB-INF
+→ JSP files not directly accessible via URL
+
+✅ Server-side Validation
+→ All forms validated on server
+
+✅ Client-side Validation
+→ JavaScript validation before form submit
+
+
+---
+
+## 🎯 Key Learning Outcomes
+
+✅ MVC Design Pattern implementation
+✅ DAO + DAOImpl Pattern for DB abstraction
+✅ JDBC for database operations
+✅ Session Management for authentication
+✅ BCrypt for secure password hashing
+✅ JSTL and EL expressions in JSP
+✅ Form validation (JS + Java)
+✅ File upload handling
+✅ Soft delete pattern
+✅ Batch processing for order items
+✅ CSS custom properties for theming
+✅ Responsive web design
+✅ Order tracking system
+✅ Wishlist management
+✅ Admin panel development
+
+
+---
+
+## 👩‍💻 Developer
+
+**Madhavi Gurram**
+Java Full Stack Trainee
+TAP Academy, Bengaluru, Karnataka
+
+[![GitHub](https://img.shields.io/badge/GitHub-Madhavi--Gurram-black?style=flat&logo=github)](https://github.com/Madhavi-Gurram)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://linkedin.com/in/madhavi-gurram)
+
+---
+
+## 📄 License
+
+This project is developed for educational purposes
+as part of Java Full Stack Training at TAP Academy, Bengaluru.
+
+---
+
+⭐ If you found this project helpful, please give it a star on GitHub!
+
+After pasting — save with Ctrl+S
+
+Then run in CMD:
+
+cmd
+git add .
+git commit -m "Add README and gitignore"
+git push -u origin main
+
+🚀
