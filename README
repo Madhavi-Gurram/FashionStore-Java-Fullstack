@@ -357,13 +357,3 @@ as part of Java Full Stack Training at TAP Academy, Bengaluru.
 
 ⭐ If you found this project helpful, please give it a star on GitHub!
 
-After pasting — save with Ctrl+S
-
-Then run in CMD:
-
-cmd
-git add .
-git commit -m "Add README and gitignore"
-git push -u origin main
-
-🚀
